@@ -1,0 +1,52 @@
+nitialize Firebase project (Hosting, Firestore, Storage) and basic frontend structure for Lost & Found agent (no authentication required).
+Set up backend (Cloud Functions or simple server) to handle lost report submissions and trigger video analysis using Google Cloud Storage and Vertex AI Vision/Gemini.
+Implement logic to extract frames from stored videos and send them to Vertex AI Vision/Gemini for matching with user-provided photo/description.
+Integrate with Override Agent: pass match info to Override Agent and handle response (continue search if declined).
+Implement frontend UI for submitting lost reports and displaying match status/results.
+Test end-to-end flow with sample videos and images, ensuring search can continue if match is declined by Override Agent.
+
+Project Setup & Initial Steps
+1. Initialize Firebase Project
+Set up Firebase Hosting for the frontend.
+Set up Firestore (for lost reports/status) and Cloud Storage (for videos/images).
+2. Basic Frontend Structure
+Simple web UI for:
+Submitting a lost report (photo/description).
+Viewing match status/results.
+3. Backend Setup
+Cloud Functions (or a simple server) to:
+Handle lost report submissions.
+Trigger video analysis (frame extraction, AI matching).
+Pass match info to the Override Agent.
+Handle response from Override Agent (continue search if declined).
+
+4. Video Analysis Logic
+Extract frames from stored videos.
+Use Vertex AI Vision/Gemini for image matching.
+5. Integration with Override Agent
+Pass match info via API or message.
+If declined, continue searching (possibly on new feeds).
+
+Step-by-Step Plan
+1. Set Up Backend (Cloud Functions or Express Server)
+Implement endpoints for:
+Submitting lost reports (photo/description).
+Triggering video analysis.
+Passing match info to the Override Agent.
+Handling Override Agent responses.
+Write unit tests for each function/module (e.g., using Jest for Node.js).
+2. Develop and Test Core Features
+Frame extraction from videos (test with sample files).
+AI matching logic (mock or use real Vertex AI calls; test with known images).
+API communication with Override Agent (mock responses for testing).
+Ensure each module is tested in isolation before integration.
+3. Set Up Firebase Project
+Configure Firestore and Cloud Storage.
+Deploy backend functions.
+4. Build Simple Frontend
+UI for submitting reports and viewing results.
+Connect to backend APIs.
+Test end-to-end flow.
+5. Integration & End-to-End Testing
+Use real data to test the full workflow.
+Ensure that if the Override Agent declines, the search continues.

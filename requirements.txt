@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pytest
+google-cloud-storage
+google-cloud-aiplatform
+requests
+python-multipart 
+opencv-python 
